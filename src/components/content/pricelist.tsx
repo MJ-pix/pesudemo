@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './pricelist.css'
+import ReservationModal from '../reservationModal/reservationModal';
 
-const pricelist = () => {
+const Pricelist = () => {
+    const [showReservationModal, setShowReservationModal] = useState(false);
+  const toggleReservationModalState = () => {
+    setShowReservationModal(!showReservationModal)
+  }
   return (
-    <div>
+    <div className='center max-w-[80%]'>
        <details>
-                <summary><b>Katso koko hinnasto</b></summary>
+                <summary className='my-6 text-xl'><b>Katso koko hinnasto</b></summary>
                 <div className="dropdown-text">
                     <h1 style={{}}>Hinnasto</h1>
                     <p style={{}}>Käytämme urakkaveloitusta, jotta tiedät työn hinnan tarkalleen etukäteen. Hinta sis. alv 24 %.
@@ -37,15 +43,15 @@ const pricelist = () => {
                         </tr>
                         <tr>
                             <td>Ruokatuoli</td>
-                            <td>14 €</td>
+                            <td>18 €</td>
                         </tr>
                         <tr>
                             <td>Työtuoli</td>
-                            <td>21 €</td>
+                            <td>27 €</td>
                         </tr>
                         <tr>
                             <td>Rahi</td>
-                            <td>25 €</td>
+                            <td>29 €</td>
                         </tr>
                         <tr>
                             <td>Nojatuoli</td>
@@ -74,11 +80,11 @@ const pricelist = () => {
                         </tr>
                         <tr>
                             <td>Yhden hengen sänky</td>
-                            <td>56 €</td>
+                            <td>66 €</td>
                         </tr>
                         <tr>
                             <td>Parisänky</td>
-                            <td>84 €</td>
+                            <td>94 €</td>
                         </tr>
                     </table>
                     <h2>Nahkakalusteet:</h2>
@@ -96,23 +102,23 @@ const pricelist = () => {
                         </tr>
                         <tr>
                             <td>S-matto ( 1 m²)</td>
-                            <td>11 €</td>
+                            <td>14 €</td>
                         </tr>
                         <tr>
                             <td>M-matto (3 m²)</td>
-                            <td>29 €</td>
+                            <td>38 €</td>
                         </tr>
                         <tr>
                             <td>L-matto ( 5 m²)</td>
-                            <td>48 €</td>
+                            <td>59 €</td>
                         </tr>
                         <tr>
                             <td>XL-matto ( 8 m²)</td>
-                            <td>70 €</td>
+                            <td>89 €</td>
                         </tr>
                         <tr>
                             <td>XXL-matto (10 m²)</td>
-                            <td>84 €</td>
+                            <td>99 €</td>
                         </tr>
                     </table>
                     <h2>Ajoneuvot (penkit, muu verhoilu):</h2>
@@ -139,7 +145,7 @@ const pricelist = () => {
                         </tr>
                         <tr>
                             <td>7-paikkainen auto</td>
-                            <td>150 €</td>
+                            <td>160 €</td>
                         </tr>
                         <tr>
                             <td>Venetekstiilit</td>
@@ -158,23 +164,23 @@ const pricelist = () => {
                         </tr>
                         <tr>
                             <td>Puutarhakalusteen pehmuste</td>
-                            <td>14 - 42 €</td>
+                            <td>18 €</td>
                         </tr>
                         <tr>
                             <td>Pehmolelu</td>
-                            <td>8 €</td>
+                            <td>9 €</td>
                         </tr>
                         <tr>
                             <td>Ryijyt ja seinävaatteet</td>
-                            <td>14 €/m²</td>
+                            <td>19 €/m²</td>
                         </tr>
                         <tr>
                             <td>Lastenvaunut ja -rattaat</td>
-                            <td>21 €</td>
+                            <td>27 €</td>
                         </tr>
                         <tr>
                             <td>Lasten turvaistuin</td>
-                            <td>21 €</td>
+                            <td>27 €</td>
                         </tr>
                     </table>
                     <h2>Lisäpalvelut:</h2>
@@ -198,11 +204,11 @@ const pricelist = () => {
                     </p>
                     <p>Jos pestävässä tuotteessa ei ole pesulappua, tapahtuu pesu asiakkaan omalla vastuulla.</p>
                 </div> 
-                <button className="button-2" onClick={() => console.log("clik")}>Varaa aika</button>
-                <button className="button-mobile"  onClick={() => console.log("clik")}>Varaa aika</button>   
+                <button className="text-xl my-3 p-1 border" onClick={toggleReservationModalState}>Varaa aika</button>  
             </details>
+            <ReservationModal toggle={showReservationModal} action={toggleReservationModalState}/>
     </div>
   )
 }
 
-export default pricelist
+export default Pricelist

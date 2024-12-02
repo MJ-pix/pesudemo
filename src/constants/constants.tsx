@@ -5,5 +5,5 @@ export const navItems = [
     {label: "Sängyn pesu", href: "#bed"},
     {label: "Maton pesu", href: "#carpet"},
     {label: "Auton tekstiilipesu", href: "#car"},
-    {label: "Yhteystiedot", href: "/"}
+    {label: "Yhteystiedot", href: "#footer"}
 ];

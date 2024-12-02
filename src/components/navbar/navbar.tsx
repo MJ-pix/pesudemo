@@ -5,23 +5,21 @@ import { useState } from 'react'
 
 const Navbar = () => {
     const [MobileMenuOpen, setMobileMenuOpen] = useState(false)
-    
     const toggleMobileMenu = () =>  {
         setMobileMenuOpen(!MobileMenuOpen)
-        console.log("toggle")
     };
 
     return (
-        <nav className="sticky top-0 z-50 pt-3 bg-white border-b-[1px] border-black xl:pb-3">
+        <nav className="sticky top-0 z-50 pt-3 bg-white xl:pb-3">
           <div className="container px-4 mx-auto relative lg:text-sm">
             <div className="flex justify-between items-center">
               <div className="flex items-center flex-shrink-0">
                 <a href='#hero'><img className="h-14 w-14 mr-2" src={logo} alt="Logo" /></a>
               </div>
-              <ul className="hidden lg:flex mr-16 space-x-12 text-lg">
+              <ul className="hidden lg:flex mr-16 space-x-12 text-lg" style={{color:"rgb(0,61,88,1)"}}>
                 {navItems.map((item, index) => (
                   <li key={index}>
-                    <a href={item.href}>{item.label}</a>
+                    <a href={item.href} className='hover:underline'>{item.label}</a>
                   </li>
                 ))}
               </ul>
@@ -29,13 +27,13 @@ const Navbar = () => {
                 <button onClick={toggleMobileMenu}>
                   {MobileMenuOpen ? 
                     <button>
-                        <div className='w-6 h-1 rotate-45 bg-black'/>
-                        <div className='w-6 h-1 -rotate-45 bg-black'/>
+                        <div className='w-6 h-1 rotate-45 bg-[rgb(0,61,88,1)]'/>
+                        <div className='w-6 h-1 -rotate-45 bg-[rgb(0,61,88,1)]'/>
                     </button> :
                     <button className='space-y-1 group'>
-                        <div className='w-6 h-1 bg-black'/>
-                        <div className='w-6 h-1 bg-black'/>
-                        <div className='w-6 h-1 bg-black'/>
+                        <div className='w-6 h-1 bg-[rgb(0,61,88,1)]'/>
+                        <div className='w-6 h-1 bg-[rgb(0,61,88,1)]'/>
+                        <div className='w-6 h-1 bg-[rgb(0,61,88,1)]'/>
                     </button>}
                 </button>
               </div>

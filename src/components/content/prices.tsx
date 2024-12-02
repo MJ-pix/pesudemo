@@ -1,18 +1,22 @@
-import React from 'react'
-import kotimainen from '../../assets/kotimainen.png'
-import laatu from '../../assets/laatu.png'
+import React, { useState } from 'react'
 import sofa from '../../assets/sofa.png'
 import bed from '../../assets/bed.png'
 import car from '../../assets/car.png'
 import carpet from '../../assets/carpet.png'
 import Otherwashable from './otherwashable'
-import Valuescontent from './valuescontent'
-const prices = () => {
+import ReservationModal from '../reservationModal/reservationModal'
+
+const Prices = () => {
+  const [showReservationModal, setShowReservationModal] = useState(false);
+  const toggleReservationModalState = () => {
+    setShowReservationModal(!showReservationModal)
+  }
+
   return (
     <div className='flex flex-wrap'>
-    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-9" id='sofa'>
-    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px]" style={{boxShadow: "-9px 13px 20px 5px black"}}>
-        <img src={sofa} alt="sofa"/>
+    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-1 sm:mb-28 xl:pl-24" id='sofa'>
+    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px] sm:shadow-[-9px_13px_20px_5px_rgb(0,0,0)] shadow-none">
+        <img src={sofa} alt="sofa" className='h-[600px] sm:h-auto'/>
         <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black text-white bg-fixed opacity-50"></div>
       </div>
       <div className='flex flex-col items-center absolute'>
@@ -30,24 +34,24 @@ const prices = () => {
             Kuuden istuttava: 161 €{<br/>}
         </p>
         <div className="flex justify-center mt-2">
-          <a
-            href="/"
+        <button
+            onClick={toggleReservationModalState}
             className="py-3 px-4 mx-3 rounded-[40px] w-48 border-2 border-white text-white text-center"  style={{fontSize: "x-large",
               boxShadow: " 0px 1px 5px 0px, inset 0px 0px 20px 11px black"}}
           >
             Varaa aika
-          </a>
+          </button>
         </div>
       </div>
     </div>
-    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-9" id='bed'>
-    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px]" style={{boxShadow: "-9px 13px 20px 5px black"}}>
+    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-1 sm:mb-28 xl:pr-24" id='bed'>
+    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px] sm:shadow-[-9px_13px_20px_5px_rgb(0,0,0)] shadow-none">
         <img
-          src={bed} alt="bed"/>
+          src={bed} alt="bed" className='h-[600px] sm:h-auto'/>
         <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"></div>
       </div>
       <div className='flex flex-col items-center absolute'>
-      <h5 className="mb-2 text-5xl font-medium leading-tight text-white">Sänkypesun hinnasto</h5>
+      <h5 className="mb-2 text-5xl font-medium leading-tight text-white">Sängyn pesu</h5>
         <p className="mb-4 text-xl text-white text-center">
         Sängyn tekstiilipesussa poistamme sängystä mm. rasvalian, pölypunkit{<br/>}  ja kuolleet ihosolut. Pesu tekee sängystä raikkaan tuoksuisen.{<br/>} Sänky pestään kätevästi paikan päällä.
         </p>
@@ -57,24 +61,20 @@ const prices = () => {
             Parisänky: 94 €{<br/>}
         </p>
         <div className="flex justify-center mt-2">
-          <a
-            href="/"
+          <button
+            onClick={toggleReservationModalState}
             className="py-3 px-4 mx-3 rounded-[40px] w-48 border-2 border-white text-white text-center"  style={{fontSize: "x-large",
               boxShadow: " 0px 1px 5px 0px, inset 0px 0px 20px 11px black"}}
           >
             Varaa aika
-          </a>
+          </button>
         </div>
       </div>
     </div>
-    <div className='min-w-[100%] my-6'>
-    <h5 className="mb-2 text-xl leading-tight text-black font-bold text-center">Pesemme myös.. </h5>
-    <Otherwashable></Otherwashable>
-    </div>
-    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-9" id='car'>
-    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px]" style={{boxShadow: "-9px 13px 20px 5px black"}}>
+    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-1 sm:mb-9 xl:pl-24" id='car'>
+    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px] sm:shadow-[-9px_13px_20px_5px_rgb(0,0,0)] shadow-none">
         <img
-          src={car} alt="car"/>
+          src={car} alt="car" className='h-[600px] sm:h-auto'/>
         <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"></div>
       </div>
       <div className='flex flex-col items-center absolute'>
@@ -91,25 +91,25 @@ const prices = () => {
           9-paikkainen auto: 160 €{<br/>}
         </p>
         <div className="flex justify-center mt-2">
-          <a
-            href="/"
+        <button
+            onClick={toggleReservationModalState}
             className="py-3 px-4 mx-3 rounded-[40px] w-48 border-2 border-white text-white text-center"  style={{fontSize: "x-large",
               boxShadow: " 0px 1px 5px 0px, inset 0px 0px 20px 11px black"}}
           >
             Varaa aika
-          </a>
+          </button>
         </div>
       </div>
     </div>
-    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-9" id='carpet'>
-    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px]" style={{boxShadow: "-9px 13px 20px 5px black"}}>
+    <div className="flex flex-col rounded-lg sm:shrink-0 sm:grow sm:flex-row sm:rounded-e-none items-center justify-center mb-1 sm:mb-9 xl:pr-24" id='carpet'>
+    <div className="relative overflow-hidden bg-cover bg-[50%] bg-no-repeat lg:rounded-[30px] sm:shadow-[-9px_13px_20px_5px_rgb(0,0,0)] shadow-none">
         <img
-          src={carpet} alt="carpet"/>
+          src={carpet} alt="carpet" className='h-[600px] sm:h-auto'/>
         <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"></div>
       </div>
       <div className='flex flex-col items-center absolute'>
       <h5 className="mb-2 text-5xl font-medium leading-tight text-white">Maton pesu</h5>
-        <p className="mb-4 text-xl text-white text-center">
+        <p className="mb-4 text-xl text-white text-center sm:p-0 p-1">
         Maton pesussa poistetaan ensin kuivat roskat, jonka {<br/>}jälkeen pinttynyt lika pestään pois tekstiilipesurilla kätevästi paikan päällä.
         </p>
         <h5 className="mb-2 text-xl leading-tight text-white font-bold">Mattopesun hinnasto</h5>
@@ -122,18 +122,24 @@ const prices = () => {
             XXL-matto (10 m²): 99 €{<br/>}
         </p>
         <div className="flex justify-center mt-2">
-          <a
-            href="/"
-            className="py-3 px-4 mx-3 rounded-[40px] w-48 border-2 border-white text-white text-center"  style={{fontSize: "x-large",
+        <button
+            onClick={toggleReservationModalState}
+            className="py-3 px-4 mx-3 rounded-[40px] w-48 border-2 border-white text-white text-center" style={{fontSize: "x-large",
               boxShadow: " 0px 1px 5px 0px, inset 0px 0px 20px 11px black"}}
           >
             Varaa aika
-          </a>
+          </button>
+          
         </div>
       </div>
+    </div>
+    <ReservationModal toggle={showReservationModal} action={toggleReservationModalState}/>
+    <div className='min-w-[100%] my-6'>
+    <h5 className="my-7 text-2xl leading-tight text-black font-bold text-center">Pesemme myös... </h5>
+    <Otherwashable></Otherwashable>
     </div>
     </div>
   )
 }
 
-export default prices
+export default Prices
