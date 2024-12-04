@@ -10,7 +10,7 @@ const Pricelist = () => {
   return (
     <div className='center max-w-[80%]'>
        <details>
-                <summary className='my-6 text-xl'><b>Katso koko hinnasto</b></summary>
+                <summary className='my-6 text-2xl hover:cursor-pointer'><b>Katso koko hinnasto</b></summary>
                 <div className="dropdown-text">
                     <h1 style={{}}>Hinnasto</h1>
                     <p style={{}}>Käytämme urakkaveloitusta, jotta tiedät työn hinnan tarkalleen etukäteen. Hinta sis. alv 24 %.
@@ -67,8 +67,7 @@ const Pricelist = () => {
                         </tr>
                         <tr>
                             <td>Neljän istuttava sohva</td>
-                            <td>12
-                                6 €</td>
+                            <td>126 €</td>
                         </tr>
                         <tr>
                             <td>Viiden istuttava sohva</td>

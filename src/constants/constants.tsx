@@ -1,9 +1,9 @@
 
 
 export const navItems = [
-    {label: "Sohvan pesu", href: "#sofa"},
-    {label: "Sängyn pesu", href: "#bed"},
-    {label: "Maton pesu", href: "#carpet"},
-    {label: "Auton tekstiilipesu", href: "#car"},
-    {label: "Yhteystiedot", href: "#footer"}
+    {label: "Sohvan pesu", href: "#Sohvan_pesu"},
+    {label: "Sängyn pesu", href: "#Sängyn_pesu"},
+    {label: "Maton pesu", href: "#Maton_pesu"},
+    {label: "Auton tekstiilipesu", href: "#Auton_tekstiilipesu"},
+    {label: "Yhteystiedot", href: "#Yhteystiedot"}
 ];
