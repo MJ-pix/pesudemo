@@ -3,7 +3,7 @@ import React from 'react'
 const footer = () => {
   return (
     <div>
-      <footer id = "Yhteystiedot" className="bg-white rounded-lg shadow dark:bg-gray-800">
+      <footer id = "Yhteystiedot" className="bg-gray-800 rounded-lg shadow">
     <div className = "w-full mx-auto max-w-full p-4 md:flex justify-center text-center">
       <span className = "text-sm text-white sm:text-center dark:text-white">
         myynti@pesuplus.fi<br/>

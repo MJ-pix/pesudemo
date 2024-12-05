@@ -75,7 +75,7 @@ const Prices  =  ()  => {
           <div className = "absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"></div>
       </div>
       <div className = 'flex flex-col items-center absolute'>
-        <h5 className = "mb-2 text-5xl font-medium leading-tight text-white">Auton tekstiilipesu</h5>
+        <h5 className = "mb-2 text-5xl font-medium text-center leading-tight text-white">Auton tekstiilipesu</h5>
           <p className = "mb-4 text-xl text-white text-center">
             Auton penkkien pesussa poistetaan ensin kuivat roskat, jonka jälkeen{<br/>} pinttynyt lika poistetaan tekstiilipesurilla kätevästi paikan päällä.
           </p>
