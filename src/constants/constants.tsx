@@ -7,3 +7,5 @@ export const navItems = [
     {label: "Auton tekstiilipesu", href: "#Auton_tekstiilipesu"},
     {label: "Yhteystiedot", href: "#Yhteystiedot"}
 ];
+
+//Prices etc...

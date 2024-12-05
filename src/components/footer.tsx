@@ -22,10 +22,10 @@ const footer = () => {
                   <img className = "w-20 h-20 rounded-full" src = "https://i.imgur.com/gBO4NHI.png" alt = "Manu Mattola"/>
                   </div>
                   <div className = "">
-                      <p className = "text-sm font-medium text-gray-200 truncate dark:text-white">
+                      <p className = "text-sm font-medium text-white">
                           Manu Mattola
                       </p>
-                      <p className = "text-sm text-gray-500 truncate dark:text-gray-400">
+                      <p className = "text-sm truncate text-gray-400">
                               Toimitusjohtaja
                       </p>
                       </div>
@@ -35,10 +35,10 @@ const footer = () => {
                   <img className = "w-20 h-20 rounded-full" src = "https://i.imgur.com/VaxbSUe.png" alt = "Ville Vähänen"/>
                   </div>
                   <div className = "">
-                      <p className = "text-sm font-medium text-gray-200 truncate">
+                      <p className = "text-sm font-medium text-white">
                           Ville Vähänen
                       </p>
-                      <p className = "text-sm text-gray-500 truncate">
+                      <p className = "text-sm text-gray-400 truncate">
                               Talousjohtaja
                       </p>
                       </div>
