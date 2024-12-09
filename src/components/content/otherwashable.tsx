@@ -2,6 +2,7 @@ import React from 'react'
 import nahkakaluste from '../../assets/nahkakalusteet.png'
 import pehmolelu from '../../assets/pehmolelu.png'
 import puutarhakaluste from '../../assets/puutarhakaluste.png'
+
 const otherwashable = () => {
   
     return (

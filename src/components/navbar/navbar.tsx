@@ -8,6 +8,10 @@ const Navbar = ()  => {
     const toggleMobileMenu  = ()  =>  {
         setMobileMenuOpen(!MobileMenuOpen)
     };
+    
+    const handleClick = () => {
+    
+    }
 
     return (
         <nav className = "sticky top-0 z-50 pt-3 bg-white xl:pb-3">
@@ -16,14 +20,16 @@ const Navbar = ()  => {
               <div className = "flex items-center flex-shrink-0">
                 <a href = '#hero'><img className = "h-14 w-14 mr-2" src = {logo} alt = "Logo" /></a>
               </div>
-              <ul className = "hidden lg:flex mr-16 space-x-12 text-lg" style = {{color:"rgb(0,61,88,1)"}}>
+              <div className='navSlide'></div>
+              <ul className = "hidden xl:flex mr-16 space-x-12 text-lg" style = {{color:"rgb(0,61,88,1)"}}>
                 {navItems.map((item, index)  => (
                   <li key = {index}>
-                    <a href = {item.href} className = 'hover:underline'>{item.label}</a>
+                    {item.label === "Hinnasto" ?  <a href = {item.href} className = 'hover:underline' onClick={handleClick}>{item.label}</a>:  <a href = {item.href} className = 'hover:underline'>{item.label}</a>}
+                    {/* <a href = {item.href} className = 'hover:underline'>{item.label}</a> */}
                   </li>
                 ))}
               </ul>
-              <div className = "lg:hidden md:flex flex-col justify-end">
+              <div className = "xl:hidden md:flex flex-col justify-end">
                 <button onClick = {toggleMobileMenu}>
                   {MobileMenuOpen ? 
                     <button>

@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import './pricelist.css'
 import ReservationModal from '../reservationModal/reservationModal';
 
-const Pricelist = () => {
+const Pricelist = (props:any) => {
     const [showReservationModal, setShowReservationModal] = useState(false);
-  const toggleReservationModalState = () => {
-    setShowReservationModal(!showReservationModal)
-  }
+    const toggleReservationModalState = () => {
+        setShowReservationModal(!showReservationModal)
+    }
+    
   return (
     <div className='center max-w-[80%]'>
-       <details>
+       <details id='Hinnasto'>
                 <summary className='my-6 text-2xl hover:cursor-pointer'><b>Katso koko hinnasto</b></summary>
                 <div className="dropdown-text">
                     <h1 style={{}}>Hinnasto</h1>
